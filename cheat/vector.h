@@ -10,4 +10,6 @@ public:
 	
 	void Init(float _x, float _y, float _z) { x = _x; y = _y; z = _z; }
 	void Init(float _xyz = 0.f) { x = y = z = _xyz; }
+	
+	float* Base(void) { return *(float*)this; }
 };
