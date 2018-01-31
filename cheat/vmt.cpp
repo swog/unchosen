@@ -8,10 +8,13 @@ typedef void* (*CreateInterfaceFn)(const char *pName, int *pReturnCode);
 
 void* VMT::GetVirtual(void* instance, int index)
 {
+	return (void*)(*(DWORD*)(instance + sizeof(DWORD*) * index));
 }
 
 void* VMT::HookVirtual(void* instance, int index, void* replacement)
 {
+	DWORD oldFunc = GetVirtual(instance, index);
+	return (void*)oldFunc;
 }
 
 void* VMT::GetInterface(char* module, char* name)
