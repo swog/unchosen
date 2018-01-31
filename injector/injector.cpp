@@ -60,6 +60,7 @@ int main(int argc, char** argv)
 	JUNK(main4);
 	
 	WriteProcessMemory(process, memory, dlldir, strlen(dlldir) + 1, 0);
+	CreateRemoteThread(process, 0, 0, (LPTHREAD_START_ROUTINE)loadLibrary, memory, 0, 0);
 	
 	CloseHandle(process);
 	
