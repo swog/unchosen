@@ -12,7 +12,7 @@ private:
 	
 	union
 	{
-		const Vector m_CheckBoxSize(0, 0, 0);
+		const Vector m_CheckBoxSize(30, 30, 0);
 		const Color m_CheckBoxColor(255, 255, 255, 255);
 	};
 	
