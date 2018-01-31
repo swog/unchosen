@@ -1,5 +1,6 @@
 
 #include "vector.h"
+#include "settings.h"
 
 class Menu
 {
