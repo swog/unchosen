@@ -13,7 +13,12 @@ void* VMT::GetVirtual(void* instance, int index)
 
 void* VMT::HookVirtual(void* instance, int index, void* replacement)
 {
-	DWORD oldFunc = GetVirtual(instance, index);
+	DWORD* vfunc = (DWORD*)(instance + sizeof(DWORD*) * index);
+	DWORD oldFunc = *vfunc;
+	DWORD oldProt;
+	VirtualProtect((void*)*vfunc, sizeof(DWORD), PAGE_EXECUTE_READWRITE, &oldProt);
+	*vfunc = (DWORD)replacement;
+	VirtualProtect((void*)*vfunc, sizeof(DWORD), oldProt, 0);
 	return (void*)oldFunc;
 }
 
