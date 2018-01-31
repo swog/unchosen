@@ -16,3 +16,5 @@ void Menu::PaintTraverse(void)
 {
 	JUNK(paint);
 }
+
+Menu menu;
