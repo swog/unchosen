@@ -12,4 +12,6 @@ public:
 	void Init(float _xyz = 0.f) { x = y = z = _xyz; }
 	
 	float* Base(void) { return (float*)this; }
+	
+	float& operator[](int i) { return ((float*)this)[i];
 };
