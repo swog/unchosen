@@ -39,6 +39,34 @@ inline void Format(char* buffer, size_t size, char* fmt, ...)
 
 void* VMT::GetInterfaceVersion(char* module, char* prefix)
 {
+	char buffer[255];
+	void* found = 0;
+	
+	for (int i = 0; i < 100; i++)
+	{
+		if (found)
+		{
+			return found;
+		}
+		
+		Format(buffer, sizeof(buffer), "%s0%d", prefix, i);
+		found = GetInterface(module, buffer);
+		
+		if (found)
+		{
+			return found;
+		}
+		
+		Format(buffer, sizeof(buffer), "%s00%d", prefix, i);
+		found = GetInterface(module, buffer);
+		
+		if (found)
+		{
+			return found;
+		}
+	}
+	
+	return 0;
 }
 	
 VMT vmt;
