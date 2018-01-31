@@ -1,4 +1,6 @@
 
+#include <math.h>
+
 class Vector
 {
 public:
@@ -12,6 +14,7 @@ public:
 	void Init(float _xyz = 0.f) { x = y = z = _xyz; }
 	
 	float* Base(void) { return (float*)this; }
+	float Length(void) { return (float)sqrt((double)(x * x + y * y + z * z));
 	
 	bool operator==(const Vector& other) { return x == other.x && y == other.y && z == other.z; }
 	bool operator!=(const Vector& other) { return x != other.x || y != other.y || z != other.z; }
