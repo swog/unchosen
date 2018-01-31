@@ -1,17 +1,28 @@
 
 // Generated using random.org
 #define JUNK(x) \
+	int _##x_i = 0; \
 	char _##x_0[] = "GndPkl1FW1"; \
+	_##x_0[_##x_i++] = 0; \
 	char _##x_1[] = "FVHKm8ayM3"; \
+	_##x_0[_##x_i++] = 0; \
 	char _##x_2[] = "Q0ZsgpTbHd"; \
+	_##x_0[_##x_i++] = 0; \
 	char _##x_3[] = "14mxUjr9cU"; \
+	_##x_0[_##x_i++] = 0; \
 	char _##x_4[] = "zG9IThb01f"; \
+	_##x_0[_##x_i++] = 0; \
 	char _##x_5[] = "7MFZirwoWZ"; \
+	_##x_0[_##x_i++] = 0; \
 	char _##x_6[] = "zeO4B4Wb3p"; \
+	_##x_0[_##x_i++] = 0; \
 	char _##x_7[] = "lzmcp7VMXS"; \
+	_##x_0[_##x_i++] = 0; \
 	char _##x_8[] = "MGc8tIkZdW"; \
+	_##x_0[_##x_i++] = 0; \
 	char _##x_9[] = "ltGOPdDUDV"; \
-	char _##x_a[] = "OM90wx0wpL"; \
-	char _##x_b[] = "WdQBqpQuj5"; \
-	char _##x_c[] = "CSWhJyWWA3"; \
-	char _##x_d[] = "yqTnPVrj3D"
+	_##x_0[_##x_i++] = 0
+
+	
+	
+	
