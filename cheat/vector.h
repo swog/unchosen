@@ -18,5 +18,6 @@ public:
 	
 	bool operator==(const Vector& other) { return x == other.x && y == other.y && z == other.z; }
 	bool operator!=(const Vector& other) { return x != other.x || y != other.y || z != other.z; }
+	
 	float& operator[](int i) { return ((float*)this)[i];
 };
