@@ -18,7 +18,7 @@ private:
 	
 	void GetCursorPos(int& cx, int& cy);
 	bool IsCursorOver(int x, int y, int w, int h);
-	void DrawRect(int x0, int y0, int x1, int y1, const Color col);
+	void DrawRect(int x0, int y0, int x1, int y1, Color col);
 	
 	void DrawCheckbox(char* label, int x, int y, int w, int h, bool& setting);
 	
