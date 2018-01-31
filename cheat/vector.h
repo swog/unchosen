@@ -13,5 +13,6 @@ public:
 	
 	float* Base(void) { return (float*)this; }
 	
+	bool operator==(const Vector& other) { return x == other.x && y == other.y && z == other.z; }
 	float& operator[](int i) { return ((float*)this)[i];
 };
