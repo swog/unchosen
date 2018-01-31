@@ -1,8 +1,10 @@
-
 #include <Windows.h>
+#include "../junk.h"
 
 DWORD WINAPI ThreadCharter(LPVOID lpParameter)
 {
+	JUNK(charter);
+	
 	FreeLibraryAndExitThread((HMODULE)lpParameter, 0);
 	return 0;
 }
