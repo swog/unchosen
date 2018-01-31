@@ -1,5 +1,7 @@
 
 #include <Windows.h>
+#include <memory.h>
+#include <iostream>
 #include "vmt.h"
 
 typedef void* (*CreateInterfaceFn)(const char *pName, int *pReturnCode);
@@ -16,6 +18,15 @@ void* VMT::GetInterface(char* module, char* name)
 {
 	CreateInterfaceFn CreateInterface = (CreateInterfaceFn)GetProcAddress(GetModuleHandleA(module), "CreateInterface");
 	return CreateInterface(name);
+}
+
+inline void Format(char* buffer, size_t size, char* fmt, ...)
+{
+	memset(buffer, 0, size);
+	va_list args;
+  	va_start(args, format);
+  	vsnprintf(buffer, size, format, args);
+  	va_end(args);
 }
 
 void* VMT::GetInterfaceVersion(char* module, char* prefix)
