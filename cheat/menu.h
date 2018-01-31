@@ -11,6 +11,7 @@ private:
 	void GetCursorPos(int& cx, int& cy);
 	
 public:
+	Menu(void);
 	void PaintTraverse(void);
 };
 
