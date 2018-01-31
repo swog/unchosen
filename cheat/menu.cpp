@@ -23,8 +23,7 @@ void Menu::DrawRect(int x0, int y0, int x1, int y1, Color col)
 
 void Menu::DrawCheckBox(char* label, int x, int y, int w, int h, bool& setting)
 {
-	surface->DrawSetColor(m_CheckBoxColor);
-	surface->DrawSetTextColor(Color(255, 255, 255, 255));
+	DrawRect(x, y, x + w, y + h, m_CheckBoxColor);
 }
 
 Menu::Menu(void)
