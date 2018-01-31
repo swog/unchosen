@@ -1,7 +1,7 @@
 
-class _Settings
+class Settings
 {
 public:
 };
 
-extern _Settings g_Settings;
+extern Settings settings;
