@@ -52,7 +52,7 @@ int main(int argc, char** argv)
 	
 	JUNK(main3);
 	
-	HANDLE process = OpenProcess(PROCESS_ACCESS_ALL, false, procID);
+	HANDLE process = OpenProcess(PROCESS_ALL_ACCESS, false, procID);
 	
 	LPVOID loadLibrary = (LPVOID)GetProcAddress(GetModuleHandleA("kernel32.dll", "LoadLibraryA"));
 	LPVOID memory = VirtualAllocEx(process, 0, strlen(dlldir) + 1, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
