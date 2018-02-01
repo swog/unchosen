@@ -14,7 +14,7 @@ public:
 	void Init(float _xyz = 0.f) { x = y = z = _xyz; }
 	
 	float* Base(void) { return (float*)this; }
-	float Length(void) { return (float)sqrt((double)(x * x + y * y + z * z));
+	float Length(void) { return (float)sqrt((double)(x * x + y * y + z * z)); }
 	
 	void Zero(void) { x = y = z = 0.f; }
 			    
