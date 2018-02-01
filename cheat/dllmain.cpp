@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include "vmt.h"
 #include "surface.h"
+#include "panel.h"
 #include "../junk.h"
 
 DWORD WINAPI ThreadCharter(LPVOID lpParameter)
@@ -9,6 +10,7 @@ DWORD WINAPI ThreadCharter(LPVOID lpParameter)
 	JUNK(charter);
 	
 	surface = (Surface*)vmt.GetInterfaceVersion("vguimatsurface.dll", "VGUI_Surface");
+	panel = (Panel*)vmt.GetInterfaceVersion("vgui2.dll", "VGUI_Panel");
 	
 	FreeLibraryAndExitThread((HMODULE)lpParameter, 0);
 	return 0;
