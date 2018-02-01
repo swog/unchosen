@@ -33,8 +33,7 @@ void Surface::DrawSetTextFont(HFont font)
 
 void Surface::DrawSetTextColor(Color col)
 {
-	typedef void(__thiscall* Fn)(void*, Color);
-	return ((Fn)vmt.GetVirtual(this, 25))(this, col);
+	return ((RepetitiveFn)vmt.GetVirtual(this, 25))(this, col.r(), col.g(), col.b(), col.a());
 }
 
 void Surface::DrawSetTextPos(int x, int y)
