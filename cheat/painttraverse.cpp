@@ -1,6 +1,7 @@
 
 #include "painttraverse.h"
 #include "vmt.h"
+#include "panel.h"
 #include "../junk.h"
 #include <cstring>
 
