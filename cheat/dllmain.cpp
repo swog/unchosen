@@ -3,6 +3,7 @@
 #include "vmt.h"
 #include "surface.h"
 #include "panel.h"
+#include "painttraverse.h"
 #include "../junk.h"
 
 DWORD WINAPI ThreadCharter(LPVOID lpParameter)
@@ -11,6 +12,8 @@ DWORD WINAPI ThreadCharter(LPVOID lpParameter)
 	
 	surface = (Surface*)vmt.GetInterfaceVersion("vguimatsurface.dll", "VGUI_Surface");
 	panel = (Panel*)vmt.GetInterfaceVersion("vgui2.dll", "VGUI_Panel");
+	
+	oPaintTraverse = (PaintTraverseFn)vmt.HookVirtual(panel, 41, hkPaintTraverse);
 	
 	FreeLibraryAndExitThread((HMODULE)lpParameter, 0);
 	return 0;
