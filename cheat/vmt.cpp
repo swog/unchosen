@@ -32,8 +32,8 @@ inline void Format(char* buffer, size_t size, char* fmt, ...)
 {
 	memset(buffer, 0, size);
 	va_list args;
-  	va_start(args, format);
-  	vsnprintf(buffer, size, format, args);
+  	va_start(args, fmt);
+  	vsnprintf(buffer, size, fmt, args);
   	va_end(args);
 }
 
