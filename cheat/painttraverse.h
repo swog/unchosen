@@ -1,4 +1,6 @@
 
+#include "panel.h"
+
 typedef void(__thiscall* PaintTraverseFn)(void*, VPANEL, bool, bool);
 extern PaintTraverseFn oPaintTraverse;
 
