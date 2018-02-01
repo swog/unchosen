@@ -18,10 +18,10 @@ bool Menu::IsCursorOver(int x, int y, int w, int h)
 void Menu::DrawRect(int x0, int y0, int x1, int y1, Color col)
 {
 	surface->DrawSetColor(col);
-	surface->DrawRect(x0, y0, x1, y1);
+	surface->DrawFilledRect(x0, y0, x1, y1);
 }
 
-void Menu::DrawCheckBox(char* label, int x, int y, int w, int h, bool& setting)
+void Menu::DrawCheckbox(char* label, int x, int y, int w, int h, bool& setting)
 {
 	DrawRect(x, y, x + w, y + h, m_CheckBoxColor);
 }
