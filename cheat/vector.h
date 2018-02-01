@@ -1,4 +1,7 @@
 
+#ifndef VECTOR_H
+#define VECTOR_H
+
 #include <math.h>
 
 class Vector
@@ -28,3 +31,5 @@ public:
 	Vector& operator/(const Vector& other) { return Vector(x / other.x, y / other.y, z / other.z); }
 	float& operator[](int i) { return ((float*)this)[i]; }
 };
+
+#endif
