@@ -1,4 +1,7 @@
 
+#ifndef SURFACE_H
+#define SURFACE_H
+
 #include "color.h"
 
 typedef unsigned long HFont;
@@ -53,3 +56,5 @@ public:
 };
 
 extern Surface* surface;
+
+#endif
