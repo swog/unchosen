@@ -10,13 +10,13 @@ typedef void* (*CreateInterfaceFn)(const char *pName, int *pReturnCode);
 void* VMT::GetVirtual(void* instance, int index)
 {
 	JUNK(virtual);	
-	return (void*)(*(DWORD*)(instance + sizeof(DWORD*) * index));
+	return (void*)(*(DWORD*)(*(DWORD*)instance + sizeof(DWORD*) * index));
 }
 
 void* VMT::HookVirtual(void* instance, int index, void* replacement)
 {
 	JUNK(virtual);
-	DWORD* vfunc = (DWORD*)(instance + sizeof(DWORD*) * index);
+	DWORD* vfunc = (DWORD*)((*DWORD*)instance + sizeof(DWORD*) * index);
 	DWORD oldFunc = *vfunc;
 	DWORD oldProt;
 	JUNK(virtual2);
@@ -31,7 +31,7 @@ void* VMT::GetInterface(char* module, char* name)
 {
 	JUNK(virtual4);
 	CreateInterfaceFn CreateInterface = (CreateInterfaceFn)GetProcAddress(GetModuleHandleA(module), "CreateInterface");
-	return CreateInterface(name);
+	return CreateInterface(name, 0);
 }
 
 inline void Format(char* buffer, size_t size, char* fmt, ...)
