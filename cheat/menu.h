@@ -10,11 +10,8 @@ private:
 	Vector m_Size;
 	char* m_Title;
 	
-	union
-	{
-		const Vector m_CheckBoxSize(30, 30, 0);
-		const Color m_CheckBoxColor(255, 255, 255, 255);
-	};
+	const Vector m_CheckBoxSize = Vector(30, 30, 0);
+	const Color m_CheckBoxColor = Color(255, 255, 255, 255);
 	
 	void GetCursorPos(int& cx, int& cy);
 	bool IsCursorOver(int x, int y, int w, int h);
