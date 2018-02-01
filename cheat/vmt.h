@@ -1,4 +1,7 @@
 
+#ifndef VMT_H
+#define VMT_H
+
 class VMT
 {
 public:
@@ -12,3 +15,5 @@ public:
 };
 
 extern VMT vmt;
+
+#endif
