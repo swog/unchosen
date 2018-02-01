@@ -2,6 +2,7 @@
 #include "painttraverse.h"
 #include "vmt.h"
 #include "panel.h"
+#include "surface.h"
 #include "../junk.h"
 #include <cstring>
 
@@ -24,4 +25,7 @@ void __fastcall hkPaintTraverse(void* self, void*, VPANEL vguiPanel, bool forceR
 	{
 		return;
 	}
+	
+	surface->DrawSetColor(Color(255, 255, 255, 255));
+	surface->DrawFilledRect(0, 0, 100, 100);
 }
