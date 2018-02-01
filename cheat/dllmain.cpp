@@ -8,7 +8,7 @@ DWORD WINAPI ThreadCharter(LPVOID lpParameter)
 {
 	JUNK(charter);
 	
-	surface = (Surface*)vmt.GetInterfaceVersion("vguimatsurface.dll", "VGUI_Surface");
+	surface = vmt.Convert<Surface*>(vmt.GetInterfaceVersion("vguimatsurface.dll", "VGUI_Surface"));
 	
 	FreeLibraryAndExitThread((HMODULE)lpParameter, 0);
 	return 0;
