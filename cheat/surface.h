@@ -46,7 +46,7 @@ public:
 	void DrawPrintText(const wchar_t* text, int textLen, FontDrawType_t drawType = FONT_DRAW_DEFAULT);
 	void DrawPrintText(const char* text, FontDrawType_t drawType = FONT_DRAW_DEFAULT);
 	
-	HFont CreateFont();
+	HFont CreateFont(void);
 	bool SetFontGlyphSet(HFont font, const char* windowsFontName, int tall, int wide, int blur, int scanlines, int flags, int nRangeMin = 0, int nRangeMax = 0);
 	void GetTextSize(HFont font, const wchar_t* text, int& wide, int& tall);
 	void GetTextSize(HFont font, const char* text, int& wide, int& tall);
