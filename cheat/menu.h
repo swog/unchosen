@@ -1,4 +1,7 @@
 
+#ifndef MENU_H
+#define MENU_H
+
 #include "vector.h"
 #include "color.h"
 #include "settings.h"
@@ -25,3 +28,5 @@ public:
 };
 
 extern Menu menu;
+
+#endif
