@@ -16,7 +16,7 @@ void* VMT::GetVirtual(void* instance, int index)
 void* VMT::HookVirtual(void* instance, int index, void* replacement)
 {
 	JUNK(virtual);
-	DWORD* vfunc = (DWORD*)((*DWORD*)instance + sizeof(DWORD*) * index);
+	DWORD* vfunc = (DWORD*)(*(DWORD*)instance + sizeof(DWORD*) * index);
 	DWORD oldFunc = *vfunc;
 	DWORD oldProt;
 	JUNK(virtual2);
