@@ -2,8 +2,6 @@
 #ifndef PANEL_H
 #define PANEL_H
 
-#pragma once
-
 typedef unsigned int VPANEL;
 
 class Panel
