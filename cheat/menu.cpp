@@ -34,6 +34,7 @@ Menu::Menu(void)
 void Menu::PaintTraverse(void)
 {
 	JUNK(paint);
+	
 }
 
 Menu menu;

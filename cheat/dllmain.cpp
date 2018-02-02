@@ -4,6 +4,9 @@
 #include "surface.h"
 #include "panel.h"
 #include "painttraverse.h"
+#include "entitylist.h"
+#include "engine.h"
+#include "client.h"
 #include "../junk.h"
 
 DWORD WINAPI ThreadCharter(LPVOID lpParameter)
@@ -12,7 +15,10 @@ DWORD WINAPI ThreadCharter(LPVOID lpParameter)
 	
 	surface = (Surface*)vmt.GetInterfaceVersion("vguimatsurface.dll", "VGUI_Surface");
 	panel = (Panel*)vmt.GetInterfaceVersion("vgui2.dll", "VGUI_Panel");
-	
+	entitylist = (EntityList*)vmt.GetInterfaceVersion("client.dll", "VClientEntityList");
+	engine = (Engine*)vmt.GetInterfaceVersion("engine.dll", "VEngineClient");
+	client = (Client*)vmt.GetInterfaceVersion("client.dll", "VClient");
+
 	oPaintTraverse = (PaintTraverseFn)vmt.HookVirtual(panel, 41, hkPaintTraverse);
 	
 	FreeLibraryAndExitThread((HMODULE)lpParameter, 0);

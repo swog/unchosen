@@ -1,0 +1,47 @@
+
+#include "engine.h"
+#include "vmt.h"
+
+void Engine::GetScreenSize(int& sw, int& sh)
+{
+	typedef void(__thiscall* Fn)(void*, int&, int&);
+	return ((Fn)vmt.GetVirtual(this, 5))(this, sw, sh);
+}
+
+bool Engine::GetPlayerInfo(int ent_num, player_info_t* pinfo)
+{
+	typedef bool(__thiscall* Fn)(void*, int, player_info_t*);
+	return ((Fn)vmt.GetVirtual(this, 8))(this, ent_num, pinfo);
+}
+
+int Engine::GetLocalPlayer(void)
+{
+	typedef int(__thiscall* Fn)(void*);
+	return ((Fn)vmt.GetVirtual(this, 12))(this);
+}
+
+void Engine::GetViewAngles(QAngle& va)
+{
+	typedef void(__thiscall* Fn)(void*, QAngle&);
+	return ((Fn)vmt.GetVirtual(this, 18))(this, va);
+}
+
+void Engine::SetViewAngles(QAngle& va)
+{
+	typedef void(__thiscall* Fn)(void*, QAngle&);
+	return ((Fn)vmt.GetVirtual(this, 19))(this, va);
+}
+
+bool Engine::IsInGame(void)
+{
+	typedef bool(__thiscall* Fn)(void*);
+	return ((Fn)vmt.GetVirtual(this, 26))(this);
+}
+
+const matrix3x4_t& Engine::WorldToScreenMatrix(void)
+{
+	typedef const matrix3x4_t&(__thiscall* Fn)(void*);
+	return ((Fn)vmt.GetVirtual(this, 37))(this);
+}
+
+Engine* engine = 0;

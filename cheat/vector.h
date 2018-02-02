@@ -32,4 +32,11 @@ public:
 	float& operator[](int i) { return ((float*)this)[i]; }
 };
 
+class QAngle : public Vector
+{
+public:
+};
+
+typedef float matrix3x4_t[3][4];
+
 #endif

@@ -4,6 +4,7 @@
 #include "panel.h"
 #include "surface.h"
 #include "../junk.h"
+#include "menu.h"
 #include <cstring>
 
 PaintTraverseFn oPaintTraverse;
@@ -26,6 +27,6 @@ void __fastcall hkPaintTraverse(void* self, void*, VPANEL vguiPanel, bool forceR
 		return;
 	}
 	
-	surface->DrawSetColor(Color(255, 255, 255, 255));
-	surface->DrawFilledRect(0, 0, 100, 100);
+	menu.PaintTraverse();
+
 }
