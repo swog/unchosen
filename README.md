@@ -1,8 +1,5 @@
 # unchosen 
 
-### cheat features
-1. Undetectable if used and built correctly
-
 ### cheat setup using visual studio
 1. Download repository
 2. Open visual studio
