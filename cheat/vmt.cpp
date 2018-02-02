@@ -9,22 +9,23 @@ typedef void* (*CreateInterfaceFn)(const char *pName, int *pReturnCode);
 
 void* VMT::GetVirtual(void* instance, int index)
 {
-	JUNK(virtual);	
-	return (void*)(*(DWORD*)(*(DWORD*)instance + sizeof(DWORD*) * index));
+	DWORD VirtualFunction = (*(DWORD*)instance) + sizeof(DWORD) * index;
+	JUNK(virtual1);
+	return (void*)(*((DWORD*)VirtualFunction));
 }
 
 void* VMT::HookVirtual(void* instance, int index, void* replacement)
 {
-	JUNK(virtual);
-	DWORD* vfunc = (DWORD*)(*(DWORD*)instance + sizeof(DWORD*) * index);
-	DWORD oldFunc = *vfunc;
-	DWORD oldProt;
+	DWORD VirtualTable = *(DWORD*)instance;
+	DWORD VirtualFunction = VirtualTable + sizeof(DWORD) * index;
+	DWORD OriginalFunction = *(DWORD*)VirtualFunction;
+	DWORD OldProtect;
+	JUNK(virtual1);
+	VirtualProtect((void*)VirtualFunction, sizeof(DWORD), PAGE_EXECUTE_READWRITE, &OldProtect);
+	*(DWORD*)VirtualFunction = (DWORD)replacement;
 	JUNK(virtual2);
-	VirtualProtect((void*)*vfunc, sizeof(DWORD), PAGE_EXECUTE_READWRITE, &oldProt);
-	*vfunc = (DWORD)replacement;
-	VirtualProtect((void*)*vfunc, sizeof(DWORD), oldProt, 0);
-	JUNK(virtual3);
-	return (void*)oldFunc;
+	VirtualProtect((void*)VirtualFunction, sizeof(DWORD), OldProtect, &OldProtect);
+	return (void*)OriginalFunction;
 }
 
 void* VMT::GetInterface(char* module, char* name)
