@@ -1,6 +1,6 @@
 # unchosen 
 
-## cheat setup using visual studio
+### cheat setup using visual studio
 1. Download repository
 2. Open visual studio
 3. Create new Win32 project, name it whatever
@@ -16,7 +16,7 @@
 13. Press ctrl+shift+b
 14. Navigate to the release folder, open the injector
 
-## injector setup using visual studio
+### injector setup using visual studio
 1. Finish the cheat setup tutorial
 2. Right click on your solution, click Add>New Project...
 3. Click Win32 Console Application, name it whatever, click ok
