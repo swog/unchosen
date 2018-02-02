@@ -5,6 +5,7 @@
 
 const char* Panel::GetClassname(VPANEL vguiPanel)
 {
+	JUNK(classname);
 	typedef const char*(__thiscall* Fn)(void*, VPANEL);
 	return ((Fn)vmt.GetVirtual(this, 36))(this, vguiPanel);
 }

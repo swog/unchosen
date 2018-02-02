@@ -11,12 +11,13 @@
 
 DWORD WINAPI ThreadCharter(LPVOID lpParameter)
 {
-	JUNK(charter);
-	
+	JUNK(charter1);
 	surface = (Surface*)vmt.GetInterfaceVersion("vguimatsurface.dll", "VGUI_Surface");
 	panel = (Panel*)vmt.GetInterfaceVersion("vgui2.dll", "VGUI_Panel");
+	JUNK(charter2);
 	entitylist = (EntityList*)vmt.GetInterfaceVersion("client.dll", "VClientEntityList");
 	engine = (Engine*)vmt.GetInterfaceVersion("engine.dll", "VEngineClient");
+	JUNK(charter3);
 	client = (Client*)vmt.GetInterfaceVersion("client.dll", "VClient");
 
 	oPaintTraverse = (PaintTraverseFn)vmt.HookVirtual(panel, 41, hkPaintTraverse);

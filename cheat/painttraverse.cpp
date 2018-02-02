@@ -14,15 +14,20 @@ void __fastcall hkPaintTraverse(void* self, void*, VPANEL vguiPanel, bool forceR
 {
 	oPaintTraverse(self, vguiPanel, forceRepaint, allowForce);
 	
+	JUNK(paint1);
+
 	static VPANEL savedPanel = 0;
 	if (!savedPanel)
 	{
+		JUNK(paint2);
 		if (!strcmp(panel->GetClassname(vguiPanel), "MatSystemTopPanel"))
 		{
 			savedPanel = vguiPanel;
 		}
 	}
 	
+	JUNK(paint3);
+
 	if (savedPanel != vguiPanel)
 	{
 		return;

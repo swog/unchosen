@@ -8,49 +8,58 @@ typedef void(__thiscall* RepetitiveFn)(void*, int, int, int, int);
 
 void Surface::DrawSetColor(Color col)
 {
+	JUNK(color);
 	return ((RepetitiveFn)vmt.GetVirtual(this, 15))(this, col.r(), col.g(), col.b(), col.a());
 }
 
 void Surface::DrawFilledRect(int x0, int y0, int x1, int y1)
 {
+	JUNK(rect);
 	return ((RepetitiveFn)vmt.GetVirtual(this, 16))(this, x0, y0, x1, y1);
 }
 
 void Surface::DrawOutlinedRect(int x0, int y0, int x1, int y1)
 {
+	JUNK(rect);
 	return ((RepetitiveFn)vmt.GetVirtual(this, 18))(this, x0, y0, x1, y1);
 }
 
 void Surface::DrawLine(int x0, int y0, int x1, int y1)
 {
+	JUNK(line);
 	return ((RepetitiveFn)vmt.GetVirtual(this, 19))(this, x0, y0, x1, y1);
 }
 
 void Surface::DrawSetTextFont(HFont font)
 {
+	JUNK(text);
 	typedef void(__thiscall* Fn)(void*, HFont);
 	return ((Fn)vmt.GetVirtual(this, 23))(this, font);
 }
 
 void Surface::DrawSetTextColor(Color col)
 {
+	JUNK(text);
 	return ((RepetitiveFn)vmt.GetVirtual(this, 25))(this, col.r(), col.g(), col.b(), col.a());
 }
 
 void Surface::DrawSetTextPos(int x, int y)
 {
+	JUNK(text);
 	typedef void(__thiscall* Fn)(void*, int, int);
 	return ((Fn)vmt.GetVirtual(this, 26))(this, x, y);
 }
 
 void Surface::DrawPrintText(const wchar_t* text, int textLen, FontDrawType_t drawType)
 {
+	JUNK(print);
 	typedef void(__thiscall* Fn)(void*, const wchar_t*, int, FontDrawType_t);
 	return ((Fn)vmt.GetVirtual(this, 28))(this, text, textLen, drawType);
 }
 
 void Surface::DrawPrintText(const char* text, FontDrawType_t drawType)
 {
+	JUNK(wide);
 	wchar_t wbuf[256];
 	MultiByteToWideChar(CP_UTF8, 0, text, 256, wbuf, 256);
 	DrawPrintText(wbuf, wcslen(wbuf), drawType);
@@ -58,24 +67,28 @@ void Surface::DrawPrintText(const char* text, FontDrawType_t drawType)
 
 HFont Surface::CreateFont(void)
 {
+	JUNK(font);
 	typedef HFont(__thiscall* Fn)(void*);
 	return ((Fn)vmt.GetVirtual(this, 71))(this);
 }
 
 bool Surface::SetFontGlyphSet(HFont font, const char* windowsFontName, int tall, int wide, int blur, int scanlines, int flags, int nRangeMin, int nRangeMax)
 {
+	JUNK(glyph);
 	typedef bool(__thiscall* Fn)(void*, HFont, const char*, int, int, int, int, int, int, int);
 	return ((Fn)vmt.GetVirtual(this, 72))(this, font, windowsFontName, tall, wide, blur, scanlines, flags, nRangeMin, nRangeMax);
 }
 
 void Surface::GetTextSize(HFont font, const wchar_t* text, int& wide, int& tall)
 {
+	JUNK(size);
 	typedef void(__thiscall* Fn)(void*, HFont, const wchar_t*, int&, int&);
 	return ((Fn)vmt.GetVirtual(this, 79))(this, font, text, wide, tall);
 }
 
 void Surface::GetTextSize(HFont font, const char* text, int& wide, int& tall)
 {
+	JUNK(size);
 	wchar_t wbuf[256];
 	MultiByteToWideChar(CP_UTF8, 0, text, 256, wbuf, 256);
 	GetTextSize(font, wbuf, wide, tall);

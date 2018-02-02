@@ -12,12 +12,14 @@ bool Menu::IsCursorOver(int x, int y, int w, int h)
 {
 	int mx, my;
 	GetCursorPos(mx, my);
+	JUNK(cursor);
 	return (mx > x) && (my > y) && (mx < x + w) && (my < y + h);
 }
 
 void Menu::DrawRect(int x0, int y0, int x1, int y1, Color col)
 {
 	surface->DrawSetColor(col);
+	JUNK(rect);
 	surface->DrawFilledRect(x0, y0, x1, y1);
 }
 
