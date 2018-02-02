@@ -20,8 +20,9 @@
 1. Finish the cheat setup tutorial
 2. Right click on your solution, click Add>New Project...
 3. Click Win32 Console Application, name it whatever, click ok
-4. Right click on the source files filter, click Add>Existing Item...
-5. Navigate to the unchosen/injector folder, select the injector.cpp file, click add
-6. If you havent edited the junk.h file, do so now
-7. Press ctrl+shift+b
-8. Navigate to the release folder, open the executable with csgo open
+4. Click Next, check Empty Project, click Finish
+5. Right click on the source files filter, click Add>Existing Item...
+6. Navigate to the unchosen/injector folder, select the injector.cpp file, click add
+7. If you havent edited the junk.h file, do so now
+8. Press ctrl+shift+b
+9. Navigate to the release folder, open the executable with csgo open
