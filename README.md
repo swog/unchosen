@@ -29,5 +29,5 @@
 
 ### todo list
 1. Create netvar class
-2. Create player esp
+2. Add features
 3. Finish menu
