@@ -26,3 +26,8 @@
 7. If you havent edited the junk.h file, do so now
 8. Press ctrl+shift+b
 9. Navigate to the release folder, open the executable with csgo open
+
+### todo list
+1. Create netvar class
+2. Create player esp
+3. Finish menu
