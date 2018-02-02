@@ -5,6 +5,7 @@
 #include "surface.h"
 #include "../junk.h"
 #include "menu.h"
+#include "visuals.h"
 #include <cstring>
 
 PaintTraverseFn oPaintTraverse;
@@ -28,5 +29,5 @@ void __fastcall hkPaintTraverse(void* self, void*, VPANEL vguiPanel, bool forceR
 	}
 	
 	menu.PaintTraverse();
-
+	visuals.PaintTraverse();
 }
