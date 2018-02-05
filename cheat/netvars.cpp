@@ -78,7 +78,7 @@ RecvProp* NetVars::FindProp(char* tablename, char* childname)
 {
 	if (m_pTables.empty())
 	{
-		return 0;
+		return nullptr;
 	}
 
 	for (RecvTable* pTable : m_pTables)
