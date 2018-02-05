@@ -4,8 +4,13 @@
 
 NetVars::NetVars(void)
 {
+	m_pClasses = 0;
+}
+
+void NetVars::Init(void)
+{
 	m_pClasses = client->GetAllClasses();
-	
+
 	while (m_pClasses)
 	{
 		m_pTables.push_back(m_pClasses->m_pRecvTable);

@@ -14,6 +14,7 @@ class NetVars
 	std::vector<RecvTable*> m_pTables;
 public:
 	NetVars(void);
+	void Init(void);
 
 	int RecurseForOffset(RecvTable* pTable, char* childname);
 	RecvProp* RecurseForProp(RecvTable* pTable, char* childname);

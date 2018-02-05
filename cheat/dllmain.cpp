@@ -24,7 +24,7 @@ DWORD WINAPI ThreadCharter(LPVOID lpParameter)
 	client = (Client*)vmt.GetInterfaceVersion("client.dll", "VClient");
 	clientmode = **(ClientMode***)((*(DWORD**)client)[10] + 0x5);
 	JUNK(charter4);
-	netvars.SetClasses(client->GetAllClasses());
+	netvars.Init();
 
 	typedef void(__cdecl* MsgFn)(char const* fmt, ...);
 	MsgFn Msg = (MsgFn)GetProcAddress(GetModuleHandleA("tier0.dll"), "Msg");
