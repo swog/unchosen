@@ -48,7 +48,7 @@ int main(int argc, char** argv)
 	JUNK(main2);
 	
 	char dlldir[MAX_PATH];
-	GetFullPathName("cheat/unchosen.dll", MAX_PATH, dlldir, 0);
+	GetFullPathName("unchosen.dll", MAX_PATH, dlldir, 0);
 	
 	JUNK(main3);
 	
