@@ -13,7 +13,6 @@ class NetVars
 	ClientClass* m_pClasses;
 	std::vector<RecvTable*> m_pTables;
 public:
-	NetVars(void);
 	void Init(void);
 
 	int RecurseForOffset(RecvTable* pTable, char* childname);
