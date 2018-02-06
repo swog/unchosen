@@ -1,16 +1,19 @@
 
 #include "netvars.h"
 #include "client.h"
+#include "../junk.h"
 
 NetVars::NetVars(void)
 {
 	m_pClasses = 0;
+	JUNK(netvars);
 }
 
 void NetVars::Init(void)
 {
 	m_pClasses = client->GetAllClasses();
-
+	JUNK(init);
+	
 	while (m_pClasses)
 	{
 		m_pTables.push_back(m_pClasses->m_pRecvTable);
@@ -23,6 +26,8 @@ int NetVars::RecurseForOffset(RecvTable* pTable, char* childname)
 	for (int i = 0; i < pTable->m_nProps; i++)
 	{
 		RecvProp* pProp = &pTable->m_pProps[i];
+		
+		JUNK(bjord);
 		
 		RecvTable* pChildTable = pProp->m_pDataTable;
 
@@ -43,6 +48,8 @@ RecvProp* NetVars::RecurseForProp(RecvTable* pTable, char* childname)
 	for (int i = 0; i < pTable->m_nProps; i++)
 	{
 		RecvProp* pProp = &pTable->m_pProps[i];
+		
+		JUNK(iscool);
 
 		RecvTable* pChildTable = pProp->m_pDataTable;
 
