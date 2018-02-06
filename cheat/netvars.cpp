@@ -3,12 +3,6 @@
 #include "client.h"
 #include "../junk.h"
 
-NetVars::NetVars(void)
-{
-	m_pClasses = 0;
-	JUNK(netvars);
-}
-
 void NetVars::Init(void)
 {
 	m_pClasses = client->GetAllClasses();
@@ -33,7 +27,7 @@ int NetVars::RecurseForOffset(RecvTable* pTable, char* childname)
 
 		if (!pChildTable || pChildTable->m_nProps <= 0)
 		{
-			if (strcmp(pProp->m_pVarName, childname) != 0)
+			if (!strcmp(pProp->m_pVarName, childname))
 			{
 				return pProp->m_Offset;
 			}
@@ -55,7 +49,7 @@ RecvProp* NetVars::RecurseForProp(RecvTable* pTable, char* childname)
 
 		if (!pChildTable || pChildTable->m_nProps <= 0)
 		{
-			if (strcmp(pProp->m_pVarName, childname) != 0)
+			if (!strcmp(pProp->m_pVarName, childname))
 			{
 				return pProp;
 			}
@@ -74,7 +68,7 @@ int NetVars::FindOffset(char* tablename, char* childname)
 
 	for (RecvTable* pTable : m_pTables)
 	{
-		if (strcmp(pTable->m_pNetTableName, tablename) != 0)
+		if (!strcmp(pTable->m_pNetTableName, tablename))
 		{
 			return RecurseForOffset(pTable, childname);
 		}
@@ -90,7 +84,7 @@ RecvProp* NetVars::FindProp(char* tablename, char* childname)
 
 	for (RecvTable* pTable : m_pTables)
 	{
-		if (strcmp(pTable->m_pNetTableName, tablename) != 0)
+		if (!strcmp(pTable->m_pNetTableName, tablename))
 		{
 			return RecurseForProp(pTable, childname);
 		}
