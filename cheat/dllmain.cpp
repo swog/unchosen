@@ -10,6 +10,7 @@
 #include "netvars.h"
 #include "createmove.h"
 #include "clientmode.h"
+#include "offsets.h"
 #include "../junk.h"
 
 DWORD WINAPI ThreadCharter(LPVOID lpParameter)
@@ -25,11 +26,7 @@ DWORD WINAPI ThreadCharter(LPVOID lpParameter)
 	clientmode = **(ClientMode***)((*(DWORD**)client)[10] + 0x5);
 	JUNK(charter4);
 	netvars.Init();
-
-	typedef void(__cdecl* MsgFn)(char const* fmt, ...);
-	MsgFn Msg = (MsgFn)GetProcAddress(GetModuleHandleA("tier0.dll"), "Msg");
-
-	Msg("%d\n", netvars.FindOffset("DT_BasePlayer", "m_fFlags"));
+	offsets.Init();
 
 	oPaintTraverse = (PaintTraverseFn)vmt.HookVirtual(panel, 41, hkPaintTraverse);
 	oCreateMove = (CreateMoveFn)vmt.HookVirtual(clientmode, 24, hkCreateMove);
