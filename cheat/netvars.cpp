@@ -84,11 +84,9 @@ int NetVars::FindOffset(char* tablename, char* childname)
 
 	for (RecvTable* pTable : m_pTables)
 	{
-		//printf("looped through Table: %s\n", pTable->m_pNetTableName);
 
 		if (!strcmp(pTable->m_pNetTableName, tablename))
 		{
-
 			return RecurseForOffset(pTable, childname);
 		}
 	}
