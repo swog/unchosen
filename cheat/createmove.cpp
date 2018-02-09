@@ -4,6 +4,7 @@
 #include "entity.h"
 #include "entitylist.h"
 #include "engine.h"
+#include "settings.h"
 #include "../junk.h"
 
 CreateMoveFn oCreateMove;
