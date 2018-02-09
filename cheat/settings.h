@@ -5,6 +5,7 @@
 class Settings
 {
 public:
+	bool m_bAutohop;
 };
 
 extern Settings settings;
