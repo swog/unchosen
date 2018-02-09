@@ -28,6 +28,5 @@
 9. Navigate to the release folder, open the executable with csgo open
 
 ### todo list
-1. Create netvar class
-2. Add features
-3. Finish menu
+1. Add features
+2. Finish menu
