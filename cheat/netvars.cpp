@@ -87,6 +87,8 @@ int NetVars::FindOffset(char* tablename, char* childname)
 			return RecurseForOffset(pTable, childname);
 		}
 	}
+	
+	return 0;
 }
 
 RecvProp* NetVars::FindProp(char* tablename, char* childname)
@@ -103,6 +105,8 @@ RecvProp* NetVars::FindProp(char* tablename, char* childname)
 			return RecurseForProp(pTable, childname);
 		}
 	}
+	
+	return nullptr;
 }
 
 NetVars netvars;
