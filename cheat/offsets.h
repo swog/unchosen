@@ -1,4 +1,7 @@
 
+#ifndef OFFSETS_H
+#define OFFSETS_H
+
 class Offsets
 {
 public:
@@ -11,3 +14,5 @@ public:
 };
 
 extern Offsets offsets;
+
+#endif
