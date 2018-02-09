@@ -2,7 +2,7 @@
 #include "entity.h"
 #include "engine.h"
 #include "vmt.h"
-#include "netvars.h"
+#include "offsets.h"
 #include "../junk.h"
 
 int Entity::entindex(void)
@@ -26,13 +26,7 @@ const char* Entity::GetClassname(void)
 
 int Entity::GetFlags(void)
 {
-	static int m_fFlags = 0;
-	if (!m_fFlags)
-	{
-		m_fFlags = netvars.FindOffset("DT_BasePlayer", "m_fFlags");
-	}
-
-	return *(int*)(this + m_fFlags);
+	return *(int*)(this + offsets.m_fFlags);
 }
 
 bool Entity::IsOnGround(void)
