@@ -3,10 +3,14 @@
 #include "usercmd.h"
 #include "settings.h"
 #include "entity.h"
+#include "entitylist.h"
+#include "engine.h"
 #include "../junk.h"
 
 void Misc::CreateMove(UserCmd* cmd)
 {
+	Entity* local = entitylist->GetEntity(engine->GetLocalPlayer());
+
 	JUNK(misc1);
 	if (settings.m_bAutohop && cmd->buttons & IN_JUMP && !local->IsOnGround())
 	{
