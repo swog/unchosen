@@ -22,11 +22,7 @@ bool __fastcall hkCreateMove(void* self, void*, float flInputSampleTime, UserCmd
 
 	JUNK(cmove2);
 
-	if (cmd->buttons & IN_JUMP && !local->IsOnGround())
-	{
-		JUNK(cmove3);
-		cmd->buttons &= ~IN_JUMP;
-	}
+	misc.CreateMove(cmd);
 
 	JUNK(cmove4);
 
