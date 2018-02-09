@@ -2,6 +2,7 @@
 #include "misc.h"
 #include "usercmd.h"
 #include "settings.h"
+#include "entity.h"
 #include "../junk.h"
 
 void Misc::CreateMove(UserCmd* cmd)
