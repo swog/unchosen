@@ -59,12 +59,10 @@ RecvProp* NetVars::RecurseForProp(RecvTable* pTable, char* childname)
 		{
 			RecvProp* pChild = RecurseForProp(pChildTable, childname);
 			
-			if (!pChild)
+			if (pChild)
 			{
-				continue;
+				return pChild;
 			}
-
-			return pChild;
 		}
 
 		if (!strcmp(pProp->m_pVarName, childname))
