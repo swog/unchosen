@@ -11,6 +11,7 @@
 #include "createmove.h"
 #include "clientmode.h"
 #include "offsets.h"
+#include "settings.h"
 #include "../junk.h"
 
 DWORD WINAPI ThreadCharter(LPVOID lpParameter)
@@ -27,6 +28,8 @@ DWORD WINAPI ThreadCharter(LPVOID lpParameter)
 	JUNK(charter4);
 	netvars.Init();
 	offsets.Init();
+	
+	settings.m_bAutohop = true;
 
 	oPaintTraverse = (PaintTraverseFn)vmt.HookVirtual(panel, 41, hkPaintTraverse);
 	oCreateMove = (CreateMoveFn)vmt.HookVirtual(clientmode, 24, hkCreateMove);
