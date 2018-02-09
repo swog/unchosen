@@ -74,4 +74,6 @@ namespace ugui
         }
 }
 
+using namespace ugui;
+
 #endif
