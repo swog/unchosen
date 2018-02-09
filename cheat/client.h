@@ -30,7 +30,7 @@ public:
 		float       m_Vector[3];
 	};
 
-	SendPropType    m_Type;
+	SendPropType	m_Type;
 };
 
 class CRecvProxyData
@@ -45,21 +45,21 @@ public:
 class RecvProp
 {
 public:
-	const char*             m_pVarName;
-	SendPropType            m_RecvType;
-	int                     m_Flags;
-	int                     m_StringBufferSize;
-	bool                    m_bInsideArray;
-	const void*             m_pExtraData;
-	RecvProp*               m_pArrayProp;
-	void*					m_ArrayLengthProxy;
-	void*					m_ProxyFn;
-	void*					m_DataTableProxyFn;
-	RecvTable*              m_pDataTable;
-	int                     m_Offset;
-	int                     m_ElementStride;
-	int                     m_nElements;
-	const char*             m_pParentArrayPropName;
+	const char*	m_pVarName;
+	SendPropType	m_RecvType;
+	int		m_Flags;
+	int             m_StringBufferSize;
+	bool		m_bInsideArray;
+	const void*	m_pExtraData;
+	RecvProp*	m_pArrayProp;
+	void*		m_ArrayLengthProxy;
+	void*		m_ProxyFn;
+	void*		m_DataTableProxyFn;
+	RecvTable*	m_pDataTable;
+	int		m_Offset;
+	int		m_ElementStride;
+	int		m_nElements;
+	const char*	m_pParentArrayPropName;
 };
 
 class RecvTable
