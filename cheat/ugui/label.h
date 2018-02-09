@@ -23,9 +23,9 @@ namespace ugui
 		Label(char* text);
 		Label(char* text, BasePane* parent);
                 
-		//virtual ~Label();
+		virtual ~Label() {}
                 
-		//virtual void Think();
+		virtual void Think() {}
 		virtual void Paint();
                 
 	public:
