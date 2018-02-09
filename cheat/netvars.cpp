@@ -70,7 +70,7 @@ RecvProp* NetVars::RecurseForProp(RecvTable* pTable, char* childname)
 			return pProp;
 		}
 	}
-	return 0;
+	return nullptr;
 }
 
 int NetVars::FindOffset(char* tablename, char* childname)
@@ -82,7 +82,6 @@ int NetVars::FindOffset(char* tablename, char* childname)
 
 	for (RecvTable* pTable : m_pTables)
 	{
-
 		if (!strcmp(pTable->m_pNetTableName, tablename))
 		{
 			return RecurseForOffset(pTable, childname);
