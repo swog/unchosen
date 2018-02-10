@@ -1,4 +1,6 @@
 
+#include "entity.h"
+#include "entitylist.h"
 #include "engine.h"
 #include "vmt.h"
 #include "../junk.h"
@@ -22,6 +24,12 @@ int Engine::GetLocalPlayer(void)
 	JUNK(local);
 	typedef int(__thiscall* Fn)(void*);
 	return ((Fn)vmt.GetVirtual(this, 12))(this);
+}
+
+Entity* Engine::GetLocal()
+{
+	JUNK(local);
+	return entitylist->GetEntity(engine->GetLocalPlayer());
 }
 
 void Engine::GetViewAngles(QAngle& va)
