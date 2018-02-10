@@ -9,7 +9,7 @@
 
 void Misc::CreateMove(UserCmd* cmd)
 {
-	Entity* local = entitylist->GetEntity(engine->GetLocalPlayer());
+	Entity* local = engine->GetLocal();
 
 	JUNK(misc1);
 	if (settings.m_bAutohop && cmd->buttons & IN_JUMP && !local->IsOnGround())
