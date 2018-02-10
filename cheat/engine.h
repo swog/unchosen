@@ -4,6 +4,8 @@
 
 #include "vector.h"
 
+class Entity;
+
 struct player_info_t
 {
 private:
@@ -24,6 +26,7 @@ public:
 	void GetScreenSize(int& sw, int& sh);
 	bool GetPlayerInfo(int ent_num, player_info_t* pinfo);
 	int GetLocalPlayer(void);
+	Entity* GetLocal(void);
 	void GetViewAngles(QAngle& va);
 	void SetViewAngles(QAngle& va);
 	bool IsInGame(void);
