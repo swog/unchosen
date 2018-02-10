@@ -42,7 +42,7 @@ int NetVars::RecurseForOffset(RecvTable* pTable, char* childname)
 			return pProp->m_Offset + m_ExtraOffset;
 		}
 	}
-	return m_ExtraOffset;
+	return 0;
 }
 
 RecvProp* NetVars::RecurseForProp(RecvTable* pTable, char* childname)
