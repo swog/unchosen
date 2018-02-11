@@ -14,7 +14,7 @@ bool __fastcall hkCreateMove(void* self, void*, float flInputSampleTime, UserCmd
 {
 	oCreateMove(self, flInputSampleTime, cmd);
 
-	Entity* local = entitylist->GetEntity(engine->GetLocalPlayer());
+	Entity* local = engine->GetLocal();
 
 	JUNK(cmove1);
 
