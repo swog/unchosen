@@ -14,6 +14,7 @@ public:
 	const char* GetClassname(void);
 	int GetFlags(void);
 	bool IsOnGround(void);
+	Entity* GetLocal(void);
 };
 
 #endif
