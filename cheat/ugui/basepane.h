@@ -62,7 +62,7 @@ namespace ugui
                         delete pane;
                 }
                 
-                m_Elements.clear(); // go to other file
+                m_Elements.clear(); // kill yourself kiddo
         }
         
         inline void BasePane::PaintElements()
